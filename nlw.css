@@ -1,0 +1,870 @@
+/* geral =======================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --estilo: 100;
+  --hue: calc(170 + var(--estilo));
+
+  --hover: hsl(var(--hue), 100%, 14%);
+  --color-1: hsl(var(--hue), 100%, 26%);
+  --color-5: hsla(39, 100%, 97%);
+  --background-color1: hsl(calc(var(--hue) - 22), 23%, 89%);
+  --body3-color: hsl(calc(var(--hue) - 10), 14%, 97%);
+  --brand-gr-li-2: hsl(calc(val(--hue) + 10), 14%, 97%);
+
+  --color-4: hsl(0, 0%, 100%);
+  --color-2: hsl(210, 9%, 31%);
+  --color-3: hsl(210, 11%, 15%);
+
+    font-size: 62.5%;
+
+  --nav-height: 7.2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'DM Sans';
+  font-size: 1.6rem;
+
+  text-align: center;
+
+  overflow: overlay;
+
+  background-color: var(--body3-color);
+}
+
+.wrapper {
+  width: min(50rem, 100%);
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding-block: 10rem;
+}
+
+section header h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-1);
+  line-height: 21px;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+}
+
+section header h1 {
+  font-size: 3.4rem;
+  color: var(--color-3);
+  line-height: 130%;
+}
+
+section header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+
+  color: var(--color-3);
+}
+
+section p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+
+  color: var(--color-2);
+}
+
+.menu .button2 {
+  background: var(--color-4);
+  border-radius: 4rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+
+  color: var(--color-1);
+
+  display: inline-block;
+  padding: 1.6rem 3.2rem;
+  gap: 1.6rem;
+
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+
+  transition: 180ms;
+}
+
+.button2:hover {
+  background-color: var(--color-1);
+  color: var(--color-4);
+
+  filter: brightness(1.2);
+}
+
+#dots button {
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  background-color: white;
+}
+
+.greenbutton {
+  background-color: var(--color-1);
+  border: none;
+  border-radius: 4rem;
+
+  padding: 1.6rem 3.2rem;
+  width: fit-content;
+
+  margin-top: 2.6rem;
+  margin-bottom: 6rem;
+
+  color: var(--color-4);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  cursor: pointer;
+
+  transition: 180ms;
+}
+
+.greenbutton:hover {
+  background-color: var(--hover);
+}
+
+#backToTop:hover circle {
+  fill: var(--hover);
+}
+
+#testimonial .cards2 path {
+  fill: var(--color-1);
+}
+
+#testimonial .dots circle {
+  fill: var(--background-color1);
+}
+
+#testimonial .dots .pressed circle {
+  fill: var(--color-1);
+}
+
+/* CUSTOM COLORS ===================================*/
+body .logo path[fill='#00856F'],
+#backToTop circle {
+  fill: var(--color-1);
+}
+
+#services .card circle {
+  fill: var(--background-color1);
+}
+
+#services .card path {
+  stroke: var(--color-1);
+}
+
+#contact ul path {
+  stroke: var(--color-1);
+}
+
+#topbar .openmenu path {
+  stroke: var(--color-1);
+}
+footer .logo path[fill='#00856F'],
+#topbar.scroll .logo path[fill='#00856F'] {
+  fill: white;
+}
+
+#topbar.scroll .openmenu path {
+  stroke: white;
+}
+
+body.menu-extended .logo path[fill='#00856F'] {
+  fill: white;
+}
+
+nav.scroll .logo path {
+  fill: white;
+}
+
+/* menu de navegação ==================================*/
+
+nav {
+  display: flex;
+
+  height: var(--nav-height);
+
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  z-index: 1;
+}
+
+nav .menu,
+nav .closemenu {
+  position: fixed;
+}
+
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.scroll {
+  background-color: var(--color-1);
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*Menu expandido ==================================*/
+body.menu-extended {
+  overflow: hidden;
+}
+
+.menu {
+  transform: translateY(100%);
+}
+
+body.menu-extended > :not(nav) {
+  visibility: hidden;
+}
+
+.menu,
+.closemenu,
+body.menu-extended .openmenu {
+  opacity: 0;
+  visibility: relative;
+}
+
+body.menu-extended .menu,
+body.menu-extended .closemenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-extended .menu {
+  top: 0;
+  left: 0;
+  background-color: var(--color-1);
+
+  height: 100vh;
+  width: 100vw;
+
+  padding-top: var(--nav-height);
+
+  transition: 400ms;
+  transform: translateY(0);
+}
+
+.social {
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul:nth-child(1) {
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  margin-top: 6rem;
+
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+.menu ul li a {
+  color: var(--color-4);
+  text-decoration: none;
+}
+
+body.menu-extended .logo,
+body.menu-extended .closemenu {
+  position: relative;
+  z-index: 3;
+}
+body.menu-extended .logo path {
+  fill: white;
+}
+body.menu-extended .closemenu path {
+  stroke: white;
+}
+/* corpo e suas partes =============================*/
+
+#home::before {
+  content: '';
+  width: 100%;
+  height: calc(var(--nav-height) + 78%);
+  background-color: var(--background-color1);
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#home {
+  padding-top: calc(var(--nav-height) + 4.1rem);
+  padding-bottom: 0;
+}
+
+h1 {
+  margin-bottom: 2.6rem;
+}
+#home p {
+  font-size: 1.8rem;
+  color: var(--color-2);
+  line-height: 150%;
+  font-weight: 400;
+  margin-bottom: 3.2rem;
+  /*
+  display: flex;
+  align-items: center;
+  justify-content: center;*/
+}
+
+.img {
+  display: block;
+  margin-inline: auto;
+  object-position: 0 2rem;
+}
+
+#home .greenbutton {
+  margin-inline: auto;
+}
+
+#home .body2 {
+  width: 100%;
+  padding-block: 4rem;
+  margin-inline: auto;
+
+  background-color: var(--color-5);
+  border-radius: 0.6rem;
+  border: 1px solid var(--background-color1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.inbody1 h3 {
+  margin-bottom: 0.4rem;
+  font-size: 4.8rem;
+  line-height: 130%;
+  color: var(--color-3);
+}
+
+.inbody1 p {
+  color: var(--color-1);
+  margin: 0;
+  font-size: 1.6rem;
+}
+/* SERVICES ========================================*/
+
+#services p {
+  font-size: 1.6rem;
+}
+
+#services h2 {
+  margin-bottom: 6rem;
+}
+
+#services .card {
+  padding: 2.4rem;
+  background-color: var(--color-4);
+
+  text-align: left;
+
+  border: 1px solid var(--background-color1);
+  border-radius: 0.6rem;
+}
+
+#services .card h3 {
+  margin-block: 1.6rem;
+  line-height: 3.1rem;
+  font-size: 2.4rem;
+}
+
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+/* TESTIMONIAL ==============================*/
+
+#testimonial {
+  background-color: white;
+}
+
+#testimonial .cards2 {
+  height: 35rem;
+}
+
+#testimonial .avatar {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+#testimonial .slide {
+  flex-direction: row;
+  display: flex;
+  margin-top: 6rem;
+  margin-bottom: 4.2rem;
+  text-align: left;
+  gap: 3.2rem;
+}
+
+#testimonial .card2 {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem;
+  gap: 2rem;
+  background-color: var(--background-color1);
+}
+
+#testimonial .avatar p {
+  color: var(--color-1);
+  font-weight: bold;
+}
+
+#testimonial .dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/*#services .header2 {
+  padding-top: 31.8rem;
+} codigo deu problema com o java "remendo"*/
+
+/* ABOUT ===========================================*/
+
+#about {
+  /*display: flex;
+  flex-direction: column;*/
+
+  background-color: var(--background-color1);
+
+  /* margin-top: 0;
+  padding-block: 10rem;*/
+  text-align: left;
+}
+
+#about h4 {
+  letter-spacing: 0.6rem;
+}
+
+#about h2 {
+  margin-bottom: 2.4rem;
+}
+
+#about p {
+  margin-top: 2.4rem;
+  margin-bottom: 6rem;
+}
+/* CONTACT ==========================================*/
+
+#contact {
+  display: flex;
+  text-align: left;
+}
+
+#contact ul li {
+  display: flex;
+  gap: 0.8rem;
+  margin-block: 1.6rem;
+}
+
+#contact .greenbutton {
+  margin-top: 3.2rem;
+  margin-bottom: 6rem;
+  margin-inline: none;
+}
+
+#contact header {
+  margin-bottom: 3.2rem;
+}
+
+/* FOOTER ==============*/
+
+footer {
+  background-color: var(--color-1);
+  text-align: left;
+  padding-block: 6rem;
+}
+
+footer .logo svg {
+  width: 23.6rem;
+  height: 3.1rem;
+}
+
+footer .logo path {
+  fill: white;
+}
+
+footer div {
+  margin-top: 2.4rem;
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+footer p {
+  color: var(--color-5);
+}
+
+footer ul {
+  display: flex;
+  justify-content: left;
+  gap: 3.2rem;
+}
+
+/* BACK TO TOP =================*/
+
+#backToTop {
+  position: fixed;
+  top: 90vh;
+  bottom: 1.2rem;
+  right: 3.5rem;
+}
+
+#backToTop {
+  opacity: 0;
+  visibility: relative;
+
+  transition: 300ms;
+  transform: translateY(100%);
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+#sla {
+  background-color: aquamarine;
+}
+
+/* responsivo ================================= */
+
+@media (min-width: 1024px) {
+  /* reset ==================================*/
+
+  section {
+    padding-block: 16rem;
+  }
+
+  nav#topbar .wrapper * {
+    margin: 0;
+    padding: 0;
+    visibility: initial;
+    display: initial;
+    opacity: initial;
+    position: initial;
+    flex-direction: initial;
+    font-size: initial;
+    transform: initial;
+    color: initial;
+
+    font-weight: initial;
+    filter: initial;
+  }
+
+  #topbar ul {
+    margin: 0;
+    padding: 0;
+    visibility: initial;
+    display: initial;
+    opacity: initial;
+    flex-direction: initial;
+    font-size: initial;
+    transform: initial;
+    color: initial;
+    background-color: initial;
+    font-weight: initial;
+  }
+
+  nav#topbar .closemenu,
+  nav#topbar .openmenu,
+  nav#topbar .social {
+    display: none;
+  }
+
+  /* geral =================================== */
+
+  body {
+    /* Regra responsavel por desconsiderar a width da barra de scroll*/
+    overflow: auto;
+  }
+
+  .col-a {
+    grid-area: A;
+  }
+
+  .col-b {
+    grid-area: B;
+  }
+
+  .wrapper {
+    width: min(112rem, 100%);
+    display: grid;
+  }
+
+  section header h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
+
+  /* navigation =============================*/
+
+  nav#topbar .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+  }
+
+  nav#topbar .menu ul:nth-child(1) {
+    display: flex;
+    gap: 3.2rem;
+  }
+
+  nav#topbar a.button2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.4rem;
+
+    border: 1px solid var(--color-1);
+    border-radius: 4rem;
+
+    color: var(--color-1);
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-transform: uppercase;
+  }
+
+  nav#topbar .button2:hover {
+    background-color: var(--color-1);
+    color: var(--brand-gr-li-2);
+    filter: brightness(1.2);
+  }
+
+  nav#topbar.scroll .button2 {
+    border: 1px solid var(--color-5);
+    color: var(--color-5);
+    background-color: var(--color-1);
+  }
+
+  nav#topbar.scroll .menu ul li a {
+    color: var(--color-5);
+    opacity: 0.6;
+  }
+
+  nav#topbar .menu ul li a {
+    color: var(--color-1);
+
+    transition: opacity 0.4s;
+  }
+
+  nav#topbar .menu li a:hover {
+    opacity: 1;
+    font-weight: 700;
+  }
+
+  nav#topbar .menu li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--color-1);
+
+    position: relative;
+    bottom: -1.9rem;
+    left: -1rem;
+
+    display: block;
+
+    transition: width 250ms;
+  }
+
+  nav#topbar .menu li a.active::after,
+  nav#topbar .menu li a:hover::after {
+    padding-inline: 0.8rem;
+
+    width: 100%;
+  }
+  nav#topbar.scroll .menu li a.active,
+  nav#topbar.scroll .menu li a:hover {
+    opacity: 1;
+  }
+  nav#topbar.scroll .menu li a.active::after,
+  nav#topbar.scroll .menu li a:hover::after {
+    background-color: white;
+  }
+
+  /* HOME =======================================*/
+  #home::before {
+    height: calc(80% + var(--nav-height));
+  }
+  #home {
+    padding-top: var(--nav-height);
+  }
+
+  #home .wrapper {
+    grid-template-columns: 60.5rem 1fr;
+    grid-template-areas: 'A B' 'C C';
+  }
+
+  #home .col-a {
+    text-align: left;
+    align-self: center;
+  }
+
+  #home .body2 {
+    grid-area: C;
+
+    flex-direction: row;
+    padding: 6rem 12rem;
+
+    gap: 0;
+  }
+  #home h1 {
+    font-size: 5.2rem;
+  }
+
+  #home p {
+    font-size: 1.8rem;
+  }
+
+  #home .body2 .inbody1 p {
+    color: var(--color-1);
+    margin: 0;
+  }
+
+  #home .greenbutton {
+    margin: 0;
+  }
+
+  #home .img {
+    width: 42rem;
+  }
+
+  #home .body2 .inbody1 + .inbody1 {
+    border-left: 1px solid var(--color-1);
+  }
+
+  #home .body2 .inbody1 {
+    flex: 1;
+  }
+
+  /* services =======================================*/
+
+  #services h2 {
+    width: 47rem;
+    margin-inline: auto;
+  }
+  #services .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  #services .card {
+    width: 30%;
+    flex-grow: 1;
+  }
+
+  /* about =======================================*/
+
+  #about .wrapper {
+    grid-template-columns: 48rem 1fr;
+    grid-template-areas: 'B A';
+    gap: 6.7rem;
+  }
+
+  #about .col-a {
+    align-self: center;
+  }
+
+  #about header p {
+    margin-bottom: 0;
+  }
+
+  /* about =======================================*/
+
+  #contact .wrapper {
+    grid-template-columns: 1fr 57.5rem;
+    grid-template-areas: 'A B';
+  }
+  #contact h2 {
+    width: 40.4rem;
+  }
+
+  /* footer =======================================*/
+
+  footer .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'A B';
+    padding-block: 8rem;
+  }
+
+  footer div {
+    margin-bottom: 0;
+  }
+  footer .logo {
+    margin-bottom: 0;
+  }
+
+  footer .col-a {
+    align-self: center;
+  }
+
+  footer .col-b {
+    align-self: center;
+    justify-self: end;
+  }
+}
